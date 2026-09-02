@@ -1,18 +1,22 @@
 .login-page {
-  min-height: 100dvh;
+  height: calc(100dvh - 88px);
+  min-height: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 32px 20px;
   box-sizing: border-box;
+  overflow: hidden;
 }
 
 .login {
   position: relative;
   width: 100%;
   max-width: 420px;
+  max-height: 100%;
   padding: 40px;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
   box-sizing: border-box;
   border: 1px solid rgba(255, 255, 255, .14);
   border-radius: 32px;
@@ -91,7 +95,5 @@ form > label,
   .logo { margin-bottom: 23px; }
 }
 
-@media (max-height: 760px) {
-  .login-page { align-items: flex-start; }
-  .login { margin-block: 12px; }
-}
+.login::-webkit-scrollbar { width: 6px; }
+.login::-webkit-scrollbar-thumb { border-radius: 10px; background: rgba(255, 255, 255, 0); }

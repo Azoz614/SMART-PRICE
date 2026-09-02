@@ -1,0 +1,120 @@
+.otp-page {
+  height: calc(100dvh - 88px);
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 20px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.otp-card {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  padding: 40px;
+  overflow: hidden;
+  box-sizing: border-box;
+  border: 1px solid rgba(255, 255, 255, .14);
+  border-radius: 32px;
+  background: linear-gradient(145deg, rgba(255, 255, 255, .13), rgba(255, 255, 255, .045));
+  box-shadow: 0 30px 80px rgba(0, 0, 0, .52), inset 0 1px 0 rgba(255, 255, 255, .18);
+  backdrop-filter: blur(32px) saturate(140%);
+  -webkit-backdrop-filter: blur(32px) saturate(140%);
+}
+
+.otp-card::before {
+  content: '';
+  position: absolute;
+  top: -130px;
+  left: 50%;
+  width: 260px;
+  height: 180px;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, .16);
+  filter: blur(45px);
+  pointer-events: none;
+}
+
+.otp-icon {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 58px;
+  height: 58px;
+  margin: 0 auto 22px;
+  border: 1px solid rgba(255, 255, 255, .14);
+  border-radius: 18px;
+  color: #dce8ff;
+  background: rgba(138, 180, 255, .12);
+}
+
+.otp-icon svg { width: 27px; height: 27px; }
+.otp-heading { position: relative; margin-bottom: 28px; text-align: center; }
+.otp-heading span { color: rgba(255,255,255,.55); font-size: 12px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; }
+.otp-heading h1 { margin: 8px 0; color: #fff; font-size: 27px; line-height: 1.15; letter-spacing: -.035em; }
+.otp-heading p { margin: 0; color: rgba(255,255,255,.52); font-size: 13px; line-height: 1.55; }
+
+.otp-inputs {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 9px;
+}
+
+.otp-inputs input {
+  width: 100%;
+  aspect-ratio: 1 / 1.12;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: 1px solid rgba(255, 255, 255, .11);
+  border-radius: 14px;
+  color: #fff;
+  background: rgba(2, 6, 23, .35);
+  font: inherit;
+  font-size: 22px;
+  font-weight: 700;
+  text-align: center;
+  caret-color: #8ab4ff;
+  transition: border-color .2s, box-shadow .2s, background .2s;
+}
+
+.otp-inputs input:focus {
+  border-color: rgba(138, 180, 255, .75);
+  background: rgba(2, 6, 23, .5);
+  box-shadow: 0 0 0 4px rgba(78, 129, 231, .15);
+}
+
+.otp-hint { margin: 20px 0 0; color: rgba(255,255,255,.45); font-size: 12px; text-align: center; }
+.otp-hint button { padding: 0; border: 0; color: #8ab4ff; background: transparent; font: inherit; font-weight: 600; cursor: pointer; }
+
+.otp-submit {
+  width: 100%;
+  height: 50px;
+  margin-top: 22px;
+  border: 0;
+  border-radius: 15px;
+  color: #05070c;
+  background: linear-gradient(180deg, #fff, #dce5f3);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, .28), inset 0 1px 0 #fff;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform .2s, box-shadow .2s;
+}
+
+.otp-submit:hover { transform: translateY(-1px); box-shadow: 0 14px 30px rgba(0,0,0,.35); }
+.otp-submit:active { transform: scale(.985); }
+.otp-back { margin: 22px 0 0; text-align: center; font-size: 12px; }
+.otp-back a { color: rgba(255,255,255,.55); text-decoration: none; }
+.otp-back a:hover { color: #fff; }
+
+@media (max-width: 500px) {
+  .otp-page { padding: 12px; }
+  .otp-card { padding: 32px 24px; border-radius: 26px; }
+  .otp-inputs { gap: 6px; }
+  .otp-inputs input { border-radius: 11px; font-size: 19px; }
+}

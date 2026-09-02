@@ -3,6 +3,7 @@ import './login.css'
 import GoogleIcon from '../Google/Google'
 import logo from '../../assets/logo/logo.png'
 import { Link } from 'react-router-dom'
+import Navbar from '../Navbar/Navbar'
 
 
 export default function Login() {
@@ -13,9 +14,11 @@ export default function Login() {
   const handleSubmit = (event) => event.preventDefault()
 
   return (
-    <main className="login-page">
+    <>
+      <Navbar />
+      <main className="login-page">
       <section className="login" aria-labelledby="login-title">
-        <div className="logo"><img src={logo} alt="SmartPrice" className="login-logo" /></div>
+  
         <div className="login-form">
           <div className="login-heading">
             <span>Welcome back</span>
@@ -37,6 +40,7 @@ export default function Login() {
           <p className="signup-copy">New here? <Link to="/create">Create an account</Link></p>
         </div>
       </section>
-    </main>
+      </main>
+    </>
   )
 }

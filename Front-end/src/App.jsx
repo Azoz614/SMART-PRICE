@@ -1,5 +1,6 @@
 import Login from './Components/Login/Login'
 import Create from './Components/Create/Create'
+import OTP from './Components/OTP/OTP'
 import {createBrowserRouter, RouterProvider} from 'react-router-dom'
 
 const router = createBrowserRouter([
@@ -14,6 +15,10 @@ const router = createBrowserRouter([
   {
     path: "/login",
     element: <Login />
+  },
+  {
+    path: "/otp",
+    element: <OTP />
   }
 ]);
 
